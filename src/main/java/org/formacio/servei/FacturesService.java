@@ -1,7 +1,9 @@
 package org.formacio.servei;
 
 import org.formacio.domain.Factura;
+import org.springframework.stereotype.Service;
 
+@Service
 public class FacturesService {
 
 	
@@ -13,6 +15,7 @@ public class FacturesService {
 	 * 
 	 * Per implementar aquest metode necessitareu una referencia (dependencia) a FacturesRepositori
 	 */
+
 	public Factura afegirProducte (long idFactura, String producte, int totalProducte) {
 		
 		return null;

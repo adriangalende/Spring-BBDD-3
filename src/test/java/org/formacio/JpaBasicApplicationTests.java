@@ -114,15 +114,15 @@ public class JpaBasicApplicationTests {
     	     Assert.assertEquals("joan", facturesJoan.get(0).getClient().getNom());
      }
 
-//	/**
-//	 * Modifica FacturaService per a que sigui un component amb el rol de Service
-//	 */
-//	@Test
-//	public void test_factura_component() {
-//		Assert.assertNotNull(servei);
-//	}
-//
-//
+	/**
+	 * Modifica FacturaService per a que sigui un component amb el rol de Service
+	 */
+	@Test
+	public void test_factura_component() {
+		Assert.assertNotNull(servei);
+	}
+
+
 //	/**
 //	 * Modifiqueu el mapping de Factura per tal que totes les operacions de persistencia que
 //	 * es fan sobre Factura es propaguin (cascade) sobre LiniaFactura

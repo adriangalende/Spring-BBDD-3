@@ -98,23 +98,22 @@ public class JpaBasicApplicationTests {
 	}
 
 
-//	/**
-//	 * Implementa FacturesRepositori emprant la tecnica de queries derivades un metode que retorni
-//	 * totes les factures d'un client
-//	 *
-//	 * Fet aixo, modifica el test per tal que factures se inicialitzi amb una invocacio al metode
-//	 * que has creat
-//	 */
-//     @Test
-//     public void test_query_generada() {
-//    	      // canvia el null per una cridada a repositori.<metode_creat>("joan");
-//    	     List<Factura> facturesJoan = null;
-//
-//    	     Assert.assertNotNull(facturesJoan);
-//    	     Assert.assertEquals(2, facturesJoan.size());
-//    	     Assert.assertEquals("joan", facturesJoan.get(0).getClient().getNom());
-//     }
-//
+	/**
+	 * Implementa FacturesRepositori emprant la tecnica de queries derivades un metode que retorni
+	 * totes les factures d'un client
+	 *
+	 * Fet aixo, modifica el test per tal que factures se inicialitzi amb una invocacio al metode
+	 * que has creat
+	 */
+     @Test
+     public void test_query_generada() {
+    	      // canvia el null per una cridada a repositori.<metode_creat>("joan");
+    	     List<Factura> facturesJoan = repositori.findAllByClientNom("joan");
+    	     Assert.assertNotNull(facturesJoan);
+    	     Assert.assertEquals(2, facturesJoan.size());
+    	     Assert.assertEquals("joan", facturesJoan.get(0).getClient().getNom());
+     }
+
 //	/**
 //	 * Modifica FacturaService per a que sigui un component amb el rol de Service
 //	 */

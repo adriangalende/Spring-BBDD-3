@@ -24,6 +24,8 @@ public class FacturesService {
 	 */
 	@Autowired
 	FacturesRepositori facturesRepositori;
+	@Autowired
+	FidalitzacioService fidalitzacioService;
 
 	public Factura afegirProducte (long idFactura, String producte, int totalProducte) {
 		Optional<Factura> optionalFactura = facturesRepositori.findById(idFactura);
@@ -34,6 +36,9 @@ public class FacturesService {
 			liniaFactura.setProducte(producte);
 			liniaFactura.setTotal(totalProducte);
 			factura.getLinies().add(liniaFactura);
+			if(factura.getLinies().size() > 3){
+				fidalitzacioService.notificaRegal(factura.getClient().getEmail());
+			}
 		}
 		return factura;
 	}

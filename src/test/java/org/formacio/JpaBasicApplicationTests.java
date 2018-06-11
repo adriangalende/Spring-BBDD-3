@@ -152,26 +152,26 @@ public class JpaBasicApplicationTests {
 		Assert.assertEquals(307L, repositori.totalClient("joan"));
 	}
 
-//	/**
-//	 * Modifiqueu el metode afegirProducte per tal que quan la nova linia afegida sigui la
-//	 * quarta o mes de la factura que modifiquem, se notifiqui al client que te un regal.
-//	 *
-//	 * Per fer aquesta notificacio, FacturaService ha de tenir una dependencia a FidalitzacioService
-//	 * i invocar el metode notificaRegal passant l'email (IMPORTANT: es l'email, no el nom del client)
-//	 * del client de la factura
-//	 */
-//	@Test
-//	@Commit
-//	public void test_notifica_regal() {
-//	    Assert.assertTrue(fidalitzacioService.getEmailsPremiats().isEmpty());
-//
-//		servei.afegirProducte(2L, "primer", 1);
-//
-//	    Assert.assertTrue(fidalitzacioService.getEmailsPremiats().isEmpty());
-//
-//	    servei.afegirProducte(2L, "segon", 1);
-//	    Assert.assertFalse(fidalitzacioService.getEmailsPremiats().isEmpty());
-//
-//	    Assert.assertTrue(fidalitzacioService.getEmailsPremiats().contains("joan@email.com"));
-//	}
+	/**
+	 * Modifiqueu el metode afegirProducte per tal que quan la nova linia afegida sigui la
+	 * quarta o mes de la factura que modifiquem, se notifiqui al client que te un regal.
+	 *
+	 * Per fer aquesta notificacio, FacturaService ha de tenir una dependencia a FidalitzacioService
+	 * i invocar el metode notificaRegal passant l'email (IMPORTANT: es l'email, no el nom del client)
+	 * del client de la factura
+	 */
+	@Test
+	@Commit
+	public void test_notifica_regal() {
+	    Assert.assertTrue(fidalitzacioService.getEmailsPremiats().isEmpty());
+
+		servei.afegirProducte(2L, "primer", 1);
+
+	    Assert.assertTrue(fidalitzacioService.getEmailsPremiats().isEmpty());
+
+	    servei.afegirProducte(2L, "segon", 1);
+	    Assert.assertFalse(fidalitzacioService.getEmailsPremiats().isEmpty());
+
+	    Assert.assertTrue(fidalitzacioService.getEmailsPremiats().contains("joan@email.com"));
+	}
 }

@@ -1,8 +1,10 @@
 package org.formacio.repositori;
 
 
-public interface FacturesRepositori  {
+import org.formacio.domain.Factura;
+import org.springframework.data.repository.CrudRepository;
 
-	public Number totalClient(String client);
+public interface FacturesRepositori extends CrudRepository<Factura, Long> {
+
 	
 }

@@ -74,21 +74,21 @@ public class JpaBasicApplicationTests {
 		Assert.assertTrue(repositori instanceof Repository);
 	}	
 	
-//	/**
-//	 * Implementa el metode totalClient de FacturesRepositori per a que retorni el total que s'ha gastat
-//	 * en totes les factures d'un client donat
-//	 * Per aixo, emprarem una funcio que no hem introduit:
-//	 *     la funcio sum () en un select retorna, com es d'esperar, la suma dels valors de totes les files de
-//	 *     la select. Per tant, heu de fer una select que retorni totes les files de les factures del client
-//	 *     indicat i, per cada una d'elles, sumar el valor de la propietat total
-//	 */
-//	@Test
-//	public void test_total_client() {
-//		Assert.assertEquals(306L, repositori.totalClient("joan"));
-//	}
-//
-//
-//
+	/**
+	 * Implementa el metode totalClient de FacturesRepositori per a que retorni el total que s'ha gastat
+	 * en totes les factures d'un client donat
+	 * Per aixo, emprarem una funcio que no hem introduit:
+	 *     la funcio sum () en un select retorna, com es d'esperar, la suma dels valors de totes les files de
+	 *     la select. Per tant, heu de fer una select que retorni totes les files de les factures del client
+	 *     indicat i, per cada una d'elles, sumar el valor de la propietat total
+	 */
+	@Test
+	public void test_total_client() {
+		Assert.assertEquals(306L, repositori.totalClient("joan"));
+	}
+
+
+
 //	/**
 //	 * Si no ho has fet, fes qeu FacturesRepositori sigui un repositori amb els metodes CRUD automatics
 //	 */

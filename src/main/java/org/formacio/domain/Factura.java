@@ -12,9 +12,11 @@ public class Factura {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="fac_id")
 	private Long id;
-	
+	@ManyToOne
+	@JoinColumn(name="fac_client")
 	private Client client;
-	
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="lin_factura")
 	private Set<LiniaFactura> linies = new HashSet<>();
 
 	public Long getId() {

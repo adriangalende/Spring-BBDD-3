@@ -89,15 +89,15 @@ public class JpaBasicApplicationTests {
 
 
 
-//	/**
-//	 * Si no ho has fet, fes qeu FacturesRepositori sigui un repositori amb els metodes CRUD automatics
-//	 */
-//	@Test
-//	public void test_repositori_es_crud() {
-//		Assert.assertTrue(repositori instanceof CrudRepository);
-//	}
-//
-//
+	/**
+	 * Si no ho has fet, fes qeu FacturesRepositori sigui un repositori amb els metodes CRUD automatics
+	 */
+	@Test
+	public void test_repositori_es_crud() {
+		Assert.assertTrue(repositori instanceof CrudRepository);
+	}
+
+
 //	/**
 //	 * Implementa FacturesRepositori emprant la tecnica de queries derivades un metode que retorni
 //	 * totes les factures d'un client

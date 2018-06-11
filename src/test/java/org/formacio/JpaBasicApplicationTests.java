@@ -123,21 +123,21 @@ public class JpaBasicApplicationTests {
 	}
 
 
-//	/**
-//	 * Modifiqueu el mapping de Factura per tal que totes les operacions de persistencia que
-//	 * es fan sobre Factura es propaguin (cascade) sobre LiniaFactura
-//	 */
-//	@Test
-//	@Transactional
-//	public void test_propaga_operacions_factura_a_linies() {
-//		Factura factura = em.find(Factura.class, 1L);
-//		LiniaFactura linia = new LiniaFactura();
-//		linia.setProducte("nou producte");
-//		linia.setTotal(10);
-//		factura.getLinies().add(linia);
-//		em.flush();
-//	}
-//
+	/**
+	 * Modifiqueu el mapping de Factura per tal que totes les operacions de persistencia que
+	 * es fan sobre Factura es propaguin (cascade) sobre LiniaFactura
+	 */
+	@Test
+	@Transactional
+	public void test_propaga_operacions_factura_a_linies() {
+		Factura factura = em.find(Factura.class, 1L);
+		LiniaFactura linia = new LiniaFactura();
+		linia.setProducte("nou producte");
+		linia.setTotal(10);
+		factura.getLinies().add(linia);
+		em.flush();
+	}
+
 //	/**
 //	 * Implementa el metode afegirProducte de FacturaService
 //	 */

@@ -138,20 +138,20 @@ public class JpaBasicApplicationTests {
 		em.flush();
 	}
 
-//	/**
-//	 * Implementa el metode afegirProducte de FacturaService
-//	 */
-//	@Test
-//	@Commit
-//	public void test_nova_factura() {
-//		Factura nova = servei.afegirProducte(2L, "Galletes", 1);
-//
-//		Assert.assertNotNull(nova.getId());
-//		Assert.assertEquals(2L, nova.getId().longValue());
-//
-//		Assert.assertEquals(307L, repositori.totalClient("joan"));
-//	}
-//
+	/**
+	 * Implementa el metode afegirProducte de FacturaService
+	 */
+	@Test
+	@Commit
+	public void test_nova_factura() {
+		Factura nova = servei.afegirProducte(2L, "Galletes", 1);
+
+		Assert.assertNotNull(nova.getId());
+		Assert.assertEquals(2L, nova.getId().longValue());
+
+		Assert.assertEquals(307L, repositori.totalClient("joan"));
+	}
+
 //	/**
 //	 * Modifiqueu el metode afegirProducte per tal que quan la nova linia afegida sigui la
 //	 * quarta o mes de la factura que modifiquem, se notifiqui al client que te un regal.

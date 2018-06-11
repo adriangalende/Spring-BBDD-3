@@ -36,10 +36,15 @@ public class FacturesService {
 			liniaFactura.setProducte(producte);
 			liniaFactura.setTotal(totalProducte);
 			factura.getLinies().add(liniaFactura);
-			if(factura.getLinies().size() > 3){
-				fidalitzacioService.notificaRegal(factura.getClient().getEmail());
-			}
+			facturesRepositori.save(factura);
+			notificar(factura);
 		}
 		return factura;
+	}
+
+	public void notificar(Factura factura){
+		if(factura.getLinies().size()>3){
+			fidalitzacioService.notificaRegal(factura.getClient().getEmail());
+		}
 	}
 }
